@@ -13,11 +13,6 @@
 		100A4536149AFBEA003A8642 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 100A4534149AFBEA003A8642 /* InfoPlist.strings */; };
 		100A4538149AFBEA003A8642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A4537149AFBEA003A8642 /* main.m */; };
 		100A453C149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */; };
-		100A453F149AFBEA003A8642 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A453D149AFBEA003A8642 /* MainStoryboard_iPhone.storyboard */; };
-		100A4542149AFBEA003A8642 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A4540149AFBEA003A8642 /* MainStoryboard_iPad.storyboard */; };
-		100A4545149AFBEA003A8642 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A4544149AFBEA003A8642 /* RootViewController.m */; };
-		100A4548149AFBEA003A8642 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A4547149AFBEA003A8642 /* DataViewController.m */; };
-		100A454B149AFBEA003A8642 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A454A149AFBEA003A8642 /* ModelController.m */; };
 		100A4553149AFBEA003A8642 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A4552149AFBEA003A8642 /* SenTestingKit.framework */; };
 		100A4554149AFBEA003A8642 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A452B149AFBEA003A8642 /* UIKit.framework */; };
 		100A4555149AFBEA003A8642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A452D149AFBEA003A8642 /* Foundation.framework */; };
@@ -78,14 +73,6 @@
 		100A4539149AFBEA003A8642 /* StackMobStarterProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StackMobStarterProject-Prefix.pch"; sourceTree = "<group>"; };
 		100A453A149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackMobStarterProjectAppDelegate.h; sourceTree = "<group>"; };
 		100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackMobStarterProjectAppDelegate.m; sourceTree = "<group>"; };
-		100A453E149AFBEA003A8642 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		100A4541149AFBEA003A8642 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		100A4543149AFBEA003A8642 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		100A4544149AFBEA003A8642 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		100A4546149AFBEA003A8642 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		100A4547149AFBEA003A8642 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		100A4549149AFBEA003A8642 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		100A454A149AFBEA003A8642 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		100A4551149AFBEA003A8642 /* StackMobStarterProjectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackMobStarterProjectTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		100A4552149AFBEA003A8642 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		100A455B149AFBEA003A8642 /* StackMobStarterProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StackMobStarterProjectTests-Info.plist"; sourceTree = "<group>"; };
@@ -225,14 +212,6 @@
 				100A456B149AFC63003A8642 /* StackMob-SDK */,
 				100A453A149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.h */,
 				100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */,
-				100A453D149AFBEA003A8642 /* MainStoryboard_iPhone.storyboard */,
-				100A4540149AFBEA003A8642 /* MainStoryboard_iPad.storyboard */,
-				100A4543149AFBEA003A8642 /* RootViewController.h */,
-				100A4544149AFBEA003A8642 /* RootViewController.m */,
-				100A4546149AFBEA003A8642 /* DataViewController.h */,
-				100A4547149AFBEA003A8642 /* DataViewController.m */,
-				100A4549149AFBEA003A8642 /* ModelController.h */,
-				100A454A149AFBEA003A8642 /* ModelController.m */,
 				100A4532149AFBEA003A8642 /* Supporting Files */,
 			);
 			path = StackMobStarterProject;
@@ -466,8 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				100A4536149AFBEA003A8642 /* InfoPlist.strings in Resources */,
-				100A453F149AFBEA003A8642 /* MainStoryboard_iPhone.storyboard in Resources */,
-				100A4542149AFBEA003A8642 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,9 +481,6 @@
 			files = (
 				100A4538149AFBEA003A8642 /* main.m in Sources */,
 				100A453C149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m in Sources */,
-				100A4545149AFBEA003A8642 /* RootViewController.m in Sources */,
-				100A4548149AFBEA003A8642 /* DataViewController.m in Sources */,
-				100A454B149AFBEA003A8642 /* ModelController.m in Sources */,
 				100A461E149B033A003A8642 /* JSONKit.m in Sources */,
 				100A4620149B033A003A8642 /* Base64Transcoder.c in Sources */,
 				100A4621149B033A003A8642 /* NSMutableURLRequest+Parameters.m in Sources */,
@@ -563,22 +537,6 @@
 				100A4535149AFBEA003A8642 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		100A453D149AFBEA003A8642 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				100A453E149AFBEA003A8642 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		100A4540149AFBEA003A8642 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				100A4541149AFBEA003A8642 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		100A455C149AFBEA003A8642 /* InfoPlist.strings */ = {

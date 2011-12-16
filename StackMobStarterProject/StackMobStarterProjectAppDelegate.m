@@ -10,8 +10,17 @@
 #import "StackMob.h"
 
 @implementation StackMobStarterProjectAppDelegate
-
 @synthesize window = _window;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    [[StackMob stackmob] startSession];
+    return YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -28,11 +37,6 @@
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     [[StackMob stackmob] endSession];
-}
-
-- (void)applicationDidFinishLaunching:(UIApplication *)application
-{
-    [[StackMob stackmob] startSession];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -59,5 +63,4 @@
      */
     [[StackMob stackmob] endSession];
 }
-
 @end
