@@ -21,22 +21,30 @@
 #import "StackMobHerokuRequest.h"
 #import "StackMobBulkRequest.h"
 
-@interface StackMob (Private)
+@interface StackMob()
+
+@property (nonatomic, retain) StackMobRequest *currentRequest;
+@property (nonatomic, assign) BOOL running;
+
 - (void)queueRequest:(StackMobRequest *)request andCallback:(StackMobCallback)callback;
 - (void)run;
 - (void)next;
 - (NSDictionary *)loadInfo;
 - (StackMobRequest *)destroy:(NSString *)path withArguments:(NSDictionary *)arguments andHeaders:(NSDictionary *)headers andCallback:(StackMobCallback)callback;
+
 @end
 
 #define ENVIRONMENTS [NSArray arrayWithObjects:@"production", @"development", nil]
 
 @implementation StackMob
 
-@synthesize requests;
-@synthesize callbacks;
-@synthesize session;
-@synthesize authCookie;
+@synthesize requests = _requests;
+@synthesize callbacks = _callbacks;
+@synthesize session = _session;
+@synthesize authCookie = _authCookie;
+
+@synthesize currentRequest = _currentRequest;
+@synthesize running = _running;
 
 static StackMob *_sharedManager = nil;
 static SMEnvironment environment;
@@ -47,12 +55,12 @@ static SMEnvironment environment;
         _sharedManager = [[super allocWithZone:NULL] init];
         environment = SMEnvironmentProduction;
         _sharedManager.session = [StackMobSession sessionForApplication:apiKey
-                                                                  secret:apiSecret
-                                                                 appName:appName
-                                                               subDomain:subDomain
-                                                                  domain:SMDefaultDomain
-                                                          userObjectName:userObjectName
-                                                        apiVersionNumber:apiVersion];
+                                                                 secret:apiSecret
+                                                                appName:appName
+                                                              subDomain:subDomain
+                                                                 domain:SMDefaultDomain
+                                                         userObjectName:userObjectName
+                                                       apiVersionNumber:apiVersion];
         _sharedManager.requests = [NSMutableArray array];
         _sharedManager.callbacks = [NSMutableArray array];
     }
@@ -62,34 +70,34 @@ static SMEnvironment environment;
 + (StackMob *)stackmob {
     if (_sharedManager == nil) {
         environment = SMEnvironmentProduction;
-
+        
         _sharedManager = [[super allocWithZone:NULL] init];
         NSDictionary *appInfo = [_sharedManager loadInfo];
         if(appInfo){
             NSLog(@"Loading applicatino info from StackMob.plist is being deprecated for security purposes.");
             NSLog(@"Please define your application info in your app's prefix.pch");
             _sharedManager.session = [StackMobSession sessionForApplication:[appInfo objectForKey:@"publicKey"]
-                                                                      secret:[appInfo objectForKey:@"privateKey"]
-                                                                     appName:[appInfo objectForKey:@"appName"]
-                                                                   subDomain:[appInfo objectForKey:@"appSubdomain"]
-                                                                      domain:[appInfo objectForKey:@"domain"]
-                                                              userObjectName:[appInfo objectForKey:@"userObjectName"]
-                                                            apiVersionNumber:[appInfo objectForKey:@"apiVersion"]];
-
+                                                                     secret:[appInfo objectForKey:@"privateKey"]
+                                                                    appName:[appInfo objectForKey:@"appName"]
+                                                                  subDomain:[appInfo objectForKey:@"appSubdomain"]
+                                                                     domain:[appInfo objectForKey:@"domain"]
+                                                             userObjectName:[appInfo objectForKey:@"userObjectName"]
+                                                           apiVersionNumber:[appInfo objectForKey:@"apiVersion"]];
+            
         }
         else{
 #ifdef STACKMOB_PUBLIC_KEY
             _sharedManager.session = [StackMobSession sessionForApplication:STACKMOB_PUBLIC_KEY
-                                                                      secret:STACKMOB_PRIVATE_KEY
-                                                                     appName:STACKMOB_APP_NAME
-                                                                   subDomain:STACKMOB_APP_SUBDOMAIN
-                                                                      domain:STACKMOB_APP_DOMAIN
-                                                              userObjectName:STACKMOB_USER_OBJECT_NAME
+                                                                     secret:STACKMOB_PRIVATE_KEY
+                                                                    appName:STACKMOB_APP_NAME
+                                                                  subDomain:STACKMOB_APP_SUBDOMAIN
+                                                                     domain:STACKMOB_APP_DOMAIN
+                                                             userObjectName:STACKMOB_USER_OBJECT_NAME
                                                            apiVersionNumber:[NSNumber numberWithInt:STACKMOB_API_VERSION]];
 #else
 #warning "No configuration found"
 #endif
-
+            
         }
         _sharedManager.requests = [NSMutableArray array];
         _sharedManager.callbacks = [NSMutableArray array];
@@ -115,7 +123,7 @@ static SMEnvironment environment;
 
 - (StackMobRequest *)registerWithArguments:(NSDictionary *)arguments andCallback:(StackMobCallback)callback
 {
-    StackMobRequest *request = [StackMobRequest requestForMethod:session.userObjectName
+    StackMobRequest *request = [StackMobRequest requestForMethod:self.session.userObjectName
                                                    withArguments:arguments
                                                     withHttpVerb:POST]; 
     request.isSecure = YES;
@@ -126,7 +134,7 @@ static SMEnvironment environment;
 
 - (StackMobRequest *)loginWithArguments:(NSDictionary *)arguments andCallback:(StackMobCallback)callback
 {
-    StackMobRequest *request = [StackMobRequest requestForMethod:[NSString stringWithFormat:@"%@/login", session.userObjectName]
+    StackMobRequest *request = [StackMobRequest requestForMethod:[NSString stringWithFormat:@"%@/login", self.session.userObjectName]
                                                    withArguments:arguments
                                                     withHttpVerb:GET]; 
     request.isSecure = YES;
@@ -138,7 +146,7 @@ static SMEnvironment environment;
 
 - (StackMobRequest *)logoutWithCallback:(StackMobCallback)callback
 {
-    StackMobRequest *request = [StackMobRequest requestForMethod:[NSString stringWithFormat:@"%@/logout", session.userObjectName]
+    StackMobRequest *request = [StackMobRequest requestForMethod:[NSString stringWithFormat:@"%@/logout", self.session.userObjectName]
                                                    withArguments:[NSDictionary dictionary]
                                                     withHttpVerb:GET]; 
     request.isSecure = YES;
@@ -146,16 +154,16 @@ static SMEnvironment environment;
     [self queueRequest:request andCallback:callback];
     
     return request;
-
+    
 }
 
 - (StackMobRequest *)getUserInfowithArguments:(NSDictionary *)arguments andCallback:(StackMobCallback)callback
 {
-    return [self get:session.userObjectName withArguments:arguments andCallback:callback];
+    return [self get:self.session.userObjectName withArguments:arguments andCallback:callback];
 }
 
 - (StackMobRequest *)getUserInfowithQuery:(StackMobQuery *)query andCallback:(StackMobCallback)callback {
-    return [self get:session.userObjectName withQuery:query andCallback:callback];
+    return [self get:self.session.userObjectName withQuery:query andCallback:callback];
 }
 
 # pragma mark - Facebook methods
@@ -236,13 +244,19 @@ static SMEnvironment environment;
     return request;    
 }
 
+- (StackMobRequest *)getTwitterInfoWithCallback:(StackMobCallback)callback
+{
+    return [self get:@"getTwitterUserInfo" withCallback:callback];
+}
+
+
 # pragma mark - PUSH Notifications
 
 - (StackMobRequest *)registerForPushWithUser:(NSString *)userId token:(NSString *)token andCallback:(StackMobCallback)callback
 {
     NSDictionary *tokenDict = [NSDictionary dictionaryWithObjectsAndKeys:token, @"token",
-                           @"ios", @"type",
-                           nil];
+                               @"ios", @"type",
+                               nil];
     
     NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:userId, @"userId",
                           tokenDict, @"token",
@@ -272,7 +286,7 @@ static SMEnvironment environment;
         NSDictionary * tknDict = [NSDictionary dictionaryWithObjectsAndKeys:tkn, @"token", @"ios", @"type", nil];
         [tokensArray addObject:tknDict];
     }
-
+    
     NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:tokensArray, @"tokens", payload, @"payload", nil];
     StackMobPushRequest *request = [StackMobPushRequest requestForMethod:@"push_tokens_universal" withArguments:body];
     [self queueRequest:request andCallback:callback];
@@ -391,8 +405,8 @@ static SMEnvironment environment;
 - (StackMobRequest *)post:(NSString *)path forUser:(NSString *)user withArguments:(NSDictionary *)arguments andCallback:(StackMobCallback)callback
 {
     NSDictionary *modifiedArguments = [NSMutableDictionary dictionaryWithDictionary:arguments];
-    [modifiedArguments setValue:user forKey:session.userObjectName];
-    StackMobRequest *request = [StackMobRequest requestForMethod:[NSString stringWithFormat:@"%@/%@", session.userObjectName, path]
+    [modifiedArguments setValue:user forKey:self.session.userObjectName];
+    StackMobRequest *request = [StackMobRequest requestForMethod:[NSString stringWithFormat:@"%@/%@", self.session.userObjectName, path]
                                                    withArguments:modifiedArguments
                                                     withHttpVerb:POST];
     [self queueRequest:request andCallback:callback];
@@ -418,7 +432,7 @@ static SMEnvironment environment;
 
 - (StackMobRequest *)put:(NSString *)path withId:(NSString *)objectId andArguments:(NSDictionary *)arguments andCallback:(StackMobCallback)callback {
     NSString *fullPath = [NSString stringWithFormat:@"%@/%@", path, objectId];
-
+    
     StackMobRequest *request = [StackMobRequest requestForMethod:fullPath withArguments:arguments withHttpVerb:PUT];
     [self queueRequest:request andCallback:callback];
     return request;
@@ -436,7 +450,7 @@ static SMEnvironment environment;
     NSString *fullPath = [NSString stringWithFormat:@"%@/%@/%@", path, primaryId, relField];
     StackMobBulkRequest *request = [StackMobBulkRequest requestForMethod:fullPath withArguments:args];
     request.httpMethod = [StackMobRequest stringFromHttpVerb:PUT];
-
+    
     [self queueRequest:request andCallback:callback];
     
     return request;
@@ -453,7 +467,7 @@ static SMEnvironment environment;
     [request setHeaders:headers];
     [self queueRequest:request andCallback:callback];
     return request;
-
+    
 }
 
 - (StackMobRequest *)removeIds:(NSArray *)removeIds forSchema:(NSString *)schema andId:(NSString *)primaryId andField:(NSString *)relField withCallback:(StackMobCallback)callback {
@@ -472,7 +486,7 @@ static SMEnvironment environment;
            withArguments:[NSDictionary dictionary] 
               andHeaders:headers 
              andCallback:callback];
-
+    
 }
 
 
@@ -492,7 +506,7 @@ static SMEnvironment environment;
                   andField:relField 
              shouldCascade:isCascade 
               withCallback:callback];
-
+    
 }
 
 
@@ -514,18 +528,18 @@ static SMEnvironment environment;
 
 - (void)run
 {
-    if(!_running){
+    if(!self.running){
         if([self.requests isEmpty]) return;
-        currentRequest = [self.requests objectAtIndex:0];
-        [currentRequest sendRequest];
-        _running = YES;
+        self.currentRequest = [self.requests objectAtIndex:0];
+        [self.currentRequest sendRequest];
+        self.running = YES;
     }
 }
 
 - (void)next
 {
-    _running = NO;
-    currentRequest = nil;
+    self.running = NO;
+    self.currentRequest = nil;
     [self run];
 }
 
@@ -534,7 +548,7 @@ static SMEnvironment environment;
     NSString *filename = [[NSBundle mainBundle] pathForResource:@"StackMob" ofType:@"plist"];
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:filename];
     NSString *env = [ENVIRONMENTS objectAtIndex:(int)environment];
-
+    
     NSMutableDictionary *appInfo = nil;
     if(info){
         appInfo = [NSMutableDictionary dictionaryWithDictionary:[info objectForKey:env]];

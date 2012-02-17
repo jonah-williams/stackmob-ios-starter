@@ -26,13 +26,7 @@ typedef enum {
 
 typedef void (^StackMobCallback)(BOOL success, id result);
 
-@interface StackMob : NSObject <SMRequestDelegate>{
-    NSMutableArray *callbacks;
-    NSMutableArray *requests;
-    StackMobSession *session;
-    StackMobRequest *currentRequest;
-    BOOL _running;
-}
+@interface StackMob : NSObject <SMRequestDelegate>
 
 @property (nonatomic, retain) StackMobSession *session;
 @property (nonatomic, retain) NSMutableArray *callbacks;
@@ -135,6 +129,7 @@ typedef void (^StackMobCallback)(BOOL success, id result);
  */
 - (StackMobRequest *)getFacebookUserInfoWithCallback:(StackMobCallback)callback;
 
+
 /********************** Twitter methods ***********************/
 
 /*
@@ -163,6 +158,11 @@ typedef void (^StackMobCallback)(BOOL success, id result);
  * @param message the status update to send
  */
 - (StackMobRequest *)twitterStatusUpdate:(NSString *)message withCallback:(StackMobCallback)callback;
+
+/*
+ * Get the user info from twitter for the currently logged in user
+ */
+- (StackMobRequest *)getTwitterInfoWithCallback:(StackMobCallback)callback;
 
 /********************** PUSH Notifications ********************/
 
@@ -263,7 +263,7 @@ typedef void (^StackMobCallback)(BOOL success, id result);
 - (StackMobRequest *)post:(NSString *)path
                    withId:(NSString *)primaryId
                  andField:(NSString *)relField
-             andBulkArguments:(NSArray *)arguments
+         andBulkArguments:(NSArray *)arguments
               andCallback:(StackMobCallback)callback;
 
 
@@ -324,10 +324,10 @@ typedef void (^StackMobCallback)(BOOL success, id result);
  * automically remove an element from an array or has many relationship or unset the value of a has one relationship
  */
 - (StackMobRequest *)removeId:(NSString *)removeId 
-                     forSchema:(NSString *)schema 
-                         andId:(NSString *)primaryId 
-                      andField:(NSString *)relField 
-                  withCallback:(StackMobCallback)callback;
+                    forSchema:(NSString *)schema 
+                        andId:(NSString *)primaryId 
+                     andField:(NSString *)relField 
+                 withCallback:(StackMobCallback)callback;
 
 /*
  * automically remove an element from an array or has many relationship or unset the value of a has one relationship
