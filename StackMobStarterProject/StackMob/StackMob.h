@@ -17,6 +17,8 @@
 #import "StackMobRequest.h"
 #import "StackMobQuery.h"
 #import "StackMobConfiguration.h"
+#import "StackMobCookieStore.h"
+#import "SMFile.h"
 
 typedef enum {
     SMEnvironmentProduction = 0,
@@ -26,12 +28,22 @@ typedef enum {
 
 typedef void (^StackMobCallback)(BOOL success, id result);
 
+@protocol StackMobSessionDelegate <NSObject>
+
+@optional
+- (void)stackMobDidStartSession;
+- (void)stackMobDidEndSession;
+
+@end
+
 @interface StackMob : NSObject <SMRequestDelegate>
 
 @property (nonatomic, retain) StackMobSession *session;
 @property (nonatomic, retain) NSMutableArray *callbacks;
 @property (nonatomic, retain) NSMutableArray *requests;
-@property (nonatomic, retain) NSString *authCookie;
+@property (nonatomic, retain) StackMobCookieStore *cookieStore;
+
+@property (nonatomic, retain) id<StackMobSessionDelegate> sessionDelegate;
 
 
 /*
@@ -377,4 +389,17 @@ typedef void (^StackMobCallback)(BOOL success, id result);
  */
 - (StackMobRequest *)herokuDelete:(NSString *)path andCallback:(StackMobCallback)callback;
 
+/**************** Forgot/Reset Methods *****************/
+
+/*
+ * Sends off an email with a temporary password for a user.
+ */
+- (StackMobRequest *)forgotPasswordByUser:(NSString *)username andCallback:(StackMobCallback)callback;
+
+/*
+ * Resets the password of a logged in user
+ */
+- (StackMobRequest *)resetPasswordWithOldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword andCallback:(StackMobCallback)callback;
+
 @end
+

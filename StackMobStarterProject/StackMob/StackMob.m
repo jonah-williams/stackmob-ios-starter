@@ -25,6 +25,7 @@
 
 @property (nonatomic, retain) StackMobRequest *currentRequest;
 @property (nonatomic, assign) BOOL running;
+@property (nonatomic, retain) NSLock *queueLock;
 
 - (void)queueRequest:(StackMobRequest *)request andCallback:(StackMobCallback)callback;
 - (void)run;
@@ -38,13 +39,21 @@
 
 @implementation StackMob
 
+struct {
+    unsigned int stackMobDidStartSession:1;
+    unsigned int stackMobDidEndSession:1;
+} delegateRespondsTo;
+
 @synthesize requests = _requests;
 @synthesize callbacks = _callbacks;
 @synthesize session = _session;
-@synthesize authCookie = _authCookie;
+@synthesize cookieStore = _cookieStore;
 
 @synthesize currentRequest = _currentRequest;
 @synthesize running = _running;
+@synthesize queueLock = _queueLock;
+
+@synthesize sessionDelegate = _sessionDelegate;
 
 static StackMob *_sharedManager = nil;
 static SMEnvironment environment;
@@ -63,6 +72,7 @@ static SMEnvironment environment;
                                                        apiVersionNumber:apiVersion];
         _sharedManager.requests = [NSMutableArray array];
         _sharedManager.callbacks = [NSMutableArray array];
+        _sharedManager.queueLock = [[NSLock alloc] init];
     }
     return _sharedManager;
 }
@@ -101,6 +111,7 @@ static SMEnvironment environment;
         }
         _sharedManager.requests = [NSMutableArray array];
         _sharedManager.callbacks = [NSMutableArray array];
+        _sharedManager.cookieStore = [[StackMobCookieStore alloc] initWithSession:_sharedManager.session];
     }
     return _sharedManager;
 }
@@ -109,14 +120,39 @@ static SMEnvironment environment;
 
 - (StackMobRequest *)startSession{
     StackMobRequest *request = [StackMobRequest requestForMethod:@"startsession" withHttpVerb:POST];
-    [self queueRequest:request andCallback:nil];
+    StackMob *this = self;
+    [self queueRequest:request andCallback:^(BOOL success, id result) {
+        if (delegateRespondsTo.stackMobDidStartSession) {
+            [this.sessionDelegate stackMobDidStartSession];
+        }  
+    }];
     return request;
 }
 
 - (StackMobRequest *)endSession{
     StackMobRequest *request = [StackMobRequest requestForMethod:@"endsession" withHttpVerb:POST];
-    [self queueRequest:request andCallback:nil];
+    StackMob *this = self;
+    [self queueRequest:request andCallback:^(BOOL success, id result) {
+        if (delegateRespondsTo.stackMobDidEndSession) {
+            [this.sessionDelegate stackMobDidEndSession];
+        }                
+    }];    
     return request;
+}
+
+- (void)setSessionDelegate:(id)aSessionDelegate {
+    if (self.sessionDelegate != aSessionDelegate) {
+        [_sessionDelegate release];
+        _sessionDelegate = aSessionDelegate;
+        [_sessionDelegate retain];
+        
+        delegateRespondsTo.stackMobDidStartSession = [_sessionDelegate 
+                                                      respondsToSelector:@selector(stackMobDidStartSession)];
+        delegateRespondsTo.stackMobDidEndSession = [_sessionDelegate 
+                                                    respondsToSelector:@selector(stackMobDidEndSession)];
+        
+        NSLog(@"delegate: %d %d", delegateRespondsTo.stackMobDidStartSession, delegateRespondsTo.stackMobDidEndSession);
+    }
 }
 
 # pragma mark - User object Methods
@@ -150,7 +186,6 @@ static SMEnvironment environment;
                                                    withArguments:[NSDictionary dictionary]
                                                     withHttpVerb:GET]; 
     request.isSecure = YES;
-    self.authCookie = nil;
     [self queueRequest:request andCallback:callback];
     
     return request;
@@ -509,17 +544,41 @@ static SMEnvironment environment;
     
 }
 
+# pragma mark - Forgot/Reset password
+
+- (StackMobRequest *)forgotPasswordByUser:(NSString *)username andCallback:(StackMobCallback)callback
+{
+    NSDictionary *args = [NSDictionary dictionaryWithObjectsAndKeys:username, @"username", nil];
+    StackMobRequest *request = [StackMobRequest userRequestForMethod:@"forgotPassword" withArguments:args withHttpVerb:POST];
+    request.isSecure = YES;
+    [self queueRequest:request andCallback:callback];
+    return request;
+}
+
+- (StackMobRequest *)resetPasswordWithOldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword andCallback:(StackMobCallback)callback
+{
+    NSDictionary *oldPWDict = [NSDictionary dictionaryWithObjectsAndKeys:oldPassword, @"password", nil];
+    NSDictionary *newPWDict = [NSDictionary dictionaryWithObjectsAndKeys:newPassword, @"password", nil];
+    NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:oldPWDict, @"old", newPWDict, @"new", nil];
+    StackMobRequest *request = [StackMobRequest userRequestForMethod:@"resetPassword" withArguments:body withHttpVerb:POST];
+    request.isSecure = YES;
+    [self queueRequest:request andCallback:callback];
+    return request;
+}
+
 
 # pragma mark - Private methods
 - (void)queueRequest:(StackMobRequest *)request andCallback:(StackMobCallback)callback
 {
     request.delegate = self;
     
+    [_queueLock lock];
     [self.requests addObject:request];
     if(callback)
         [self.callbacks addObject:Block_copy(callback)];
     else
         [self.callbacks addObject:[NSNull null]];
+    [_queueLock unlock];
     
     [callback release];
     
@@ -573,15 +632,6 @@ static SMEnvironment environment;
 
 #pragma mark - StackMobRequestDelegate
 
-- (void) setAuthCookieIfFound:(StackMobRequest *)request
-{
-    NSHTTPURLResponse *response = request.httpResponse;
-    NSDictionary *fields = [response allHeaderFields];
-    NSString *cookie = [fields valueForKey:@"Set-Cookie"];
-    if(cookie)
-        self.authCookie = cookie;
-}
-
 - (void)requestCompleted:(StackMobRequest*)request {
     if([self.requests containsObject:request]){
         NSInteger idx = [self.requests indexOfObject:request];
@@ -590,9 +640,7 @@ static SMEnvironment environment;
         if(callback != [NSNull null]){
             StackMobCallback mCallback = (StackMobCallback)callback;
             BOOL wasSuccessful = request.httpResponse.statusCode < 300 && request.httpResponse.statusCode > 199;
-            
-            // hack for release
-            [self setAuthCookieIfFound:request];
+            [self.cookieStore addCookies:request];
             mCallback(wasSuccessful, [request result]);
             Block_release(mCallback);
         }else{

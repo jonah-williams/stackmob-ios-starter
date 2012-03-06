@@ -1,4 +1,4 @@
-// Copyright 2011 StackMob, Inc
+// Copyright 2012 StackMob, Inc
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,12 +13,12 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "StackMobRequest.h"
+#include "StackMobRequest.h"
 
-@interface StackMobPushRequest : StackMobRequest {
-    
-}
+@interface StackMobCookieStore : NSObject
 
-+ (id)requestForMethod:(NSString*)method withArguments:(NSDictionary*)arguments;
+- (StackMobCookieStore*)initWithSession:(StackMobSession *)session;
 
+- (void) addCookies:(StackMobRequest *)request;
+- (NSString *) cookieHeader;
 @end

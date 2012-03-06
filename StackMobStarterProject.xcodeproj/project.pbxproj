@@ -11,8 +11,8 @@
 		100A452E149AFBEA003A8642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A452D149AFBEA003A8642 /* Foundation.framework */; };
 		100A4530149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A452F149AFBEA003A8642 /* CoreGraphics.framework */; };
 		100A4536149AFBEA003A8642 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 100A4534149AFBEA003A8642 /* InfoPlist.strings */; };
-		100A4538149AFBEA003A8642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A4537149AFBEA003A8642 /* main.m */; };
-		100A453C149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */; };
+		100A4538149AFBEA003A8642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A4537149AFBEA003A8642 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		100A453C149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		100A4553149AFBEA003A8642 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A4552149AFBEA003A8642 /* SenTestingKit.framework */; };
 		100A4554149AFBEA003A8642 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A452B149AFBEA003A8642 /* UIKit.framework */; };
 		100A4555149AFBEA003A8642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A452D149AFBEA003A8642 /* Foundation.framework */; };
@@ -22,63 +22,69 @@
 		100A45CE149AFD39003A8642 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CD149AFD39003A8642 /* CFNetwork.framework */; };
 		100A45D0149AFD4E003A8642 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */; };
 		100A463C149B04E3003A8642 /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A463B149B04E3003A8642 /* YAJLIOS.framework */; };
-		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
+		5615C7B91506C091001F2AD2 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5615C7BA1506C091001F2AD2 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */; };
+		5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
+		5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
+		5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
+		5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
+		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DF14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
 		E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
 		E34463E114EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
 		E34463E214EEE32C0000185B /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E34463A214EEE32C0000185B /* Base64Transcoder.c */; };
 		E34463E314EEE32C0000185B /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E34463A214EEE32C0000185B /* Base64Transcoder.c */; };
-		E34463E414EEE32C0000185B /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A514EEE32C0000185B /* NSMutableURLRequest+Parameters.m */; };
+		E34463E414EEE32C0000185B /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A514EEE32C0000185B /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463E514EEE32C0000185B /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A514EEE32C0000185B /* NSMutableURLRequest+Parameters.m */; };
-		E34463E614EEE32C0000185B /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A714EEE32C0000185B /* NSString+URLEncoding.m */; };
+		E34463E614EEE32C0000185B /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A714EEE32C0000185B /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463E714EEE32C0000185B /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A714EEE32C0000185B /* NSString+URLEncoding.m */; };
-		E34463E814EEE32C0000185B /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A914EEE32C0000185B /* NSURL+Base.m */; };
+		E34463E814EEE32C0000185B /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A914EEE32C0000185B /* NSURL+Base.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463E914EEE32C0000185B /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A914EEE32C0000185B /* NSURL+Base.m */; };
-		E34463EA14EEE32C0000185B /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AB14EEE32C0000185B /* OAAsynchronousDataFetcher.m */; };
+		E34463EA14EEE32C0000185B /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AB14EEE32C0000185B /* OAAsynchronousDataFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463EB14EEE32C0000185B /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AB14EEE32C0000185B /* OAAsynchronousDataFetcher.m */; };
-		E34463EC14EEE32C0000185B /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AD14EEE32C0000185B /* OAConsumer.m */; };
+		E34463EC14EEE32C0000185B /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AD14EEE32C0000185B /* OAConsumer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463ED14EEE32C0000185B /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AD14EEE32C0000185B /* OAConsumer.m */; };
-		E34463EE14EEE32C0000185B /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AF14EEE32C0000185B /* OADataFetcher.m */; };
+		E34463EE14EEE32C0000185B /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AF14EEE32C0000185B /* OADataFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463EF14EEE32C0000185B /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463AF14EEE32C0000185B /* OADataFetcher.m */; };
-		E34463F014EEE32C0000185B /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B114EEE32C0000185B /* OAHMAC_SHA1SignatureProvider.m */; };
+		E34463F014EEE32C0000185B /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B114EEE32C0000185B /* OAHMAC_SHA1SignatureProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463F114EEE32C0000185B /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B114EEE32C0000185B /* OAHMAC_SHA1SignatureProvider.m */; };
-		E34463F214EEE32C0000185B /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B314EEE32C0000185B /* OAMutableURLRequest.m */; };
+		E34463F214EEE32C0000185B /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B314EEE32C0000185B /* OAMutableURLRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463F314EEE32C0000185B /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B314EEE32C0000185B /* OAMutableURLRequest.m */; };
-		E34463F414EEE32C0000185B /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B514EEE32C0000185B /* OAPlaintextSignatureProvider.m */; };
+		E34463F414EEE32C0000185B /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B514EEE32C0000185B /* OAPlaintextSignatureProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463F514EEE32C0000185B /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B514EEE32C0000185B /* OAPlaintextSignatureProvider.m */; };
-		E34463F614EEE32C0000185B /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B714EEE32C0000185B /* OARequestParameter.m */; };
+		E34463F614EEE32C0000185B /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B714EEE32C0000185B /* OARequestParameter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463F714EEE32C0000185B /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B714EEE32C0000185B /* OARequestParameter.m */; };
-		E34463F814EEE32C0000185B /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B914EEE32C0000185B /* OAServiceTicket.m */; };
+		E34463F814EEE32C0000185B /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B914EEE32C0000185B /* OAServiceTicket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463F914EEE32C0000185B /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463B914EEE32C0000185B /* OAServiceTicket.m */; };
-		E34463FA14EEE32C0000185B /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463BC14EEE32C0000185B /* OAToken.m */; };
+		E34463FA14EEE32C0000185B /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463BC14EEE32C0000185B /* OAToken.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463FB14EEE32C0000185B /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463BC14EEE32C0000185B /* OAToken.m */; };
-		E34463FC14EEE32C0000185B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C014EEE32C0000185B /* Reachability.m */; };
+		E34463FC14EEE32C0000185B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C014EEE32C0000185B /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463FD14EEE32C0000185B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C014EEE32C0000185B /* Reachability.m */; };
-		E34463FE14EEE32C0000185B /* SMFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C214EEE32C0000185B /* SMFile.m */; };
+		E34463FE14EEE32C0000185B /* SMFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C214EEE32C0000185B /* SMFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463FF14EEE32C0000185B /* SMFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C214EEE32C0000185B /* SMFile.m */; };
-		E344640014EEE32C0000185B /* SMGeoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C414EEE32C0000185B /* SMGeoPoint.m */; };
+		E344640014EEE32C0000185B /* SMGeoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C414EEE32C0000185B /* SMGeoPoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640114EEE32C0000185B /* SMGeoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C414EEE32C0000185B /* SMGeoPoint.m */; };
-		E344640214EEE32C0000185B /* StackMob.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C614EEE32C0000185B /* StackMob.m */; };
+		E344640214EEE32C0000185B /* StackMob.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C614EEE32C0000185B /* StackMob.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640314EEE32C0000185B /* StackMob.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C614EEE32C0000185B /* StackMob.m */; };
-		E344640414EEE32C0000185B /* StackMobAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C814EEE32C0000185B /* StackMobAdditions.m */; };
+		E344640414EEE32C0000185B /* StackMobAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C814EEE32C0000185B /* StackMobAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640514EEE32C0000185B /* StackMobAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463C814EEE32C0000185B /* StackMobAdditions.m */; };
-		E344640614EEE32C0000185B /* StackMobBulkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CA14EEE32C0000185B /* StackMobBulkRequest.m */; };
+		E344640614EEE32C0000185B /* StackMobBulkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CA14EEE32C0000185B /* StackMobBulkRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640714EEE32C0000185B /* StackMobBulkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CA14EEE32C0000185B /* StackMobBulkRequest.m */; };
-		E344640814EEE32C0000185B /* StackMobClientData.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CC14EEE32C0000185B /* StackMobClientData.m */; };
+		E344640814EEE32C0000185B /* StackMobClientData.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CC14EEE32C0000185B /* StackMobClientData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640914EEE32C0000185B /* StackMobClientData.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CC14EEE32C0000185B /* StackMobClientData.m */; };
-		E344640A14EEE32C0000185B /* StackMobHerokuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CF14EEE32C0000185B /* StackMobHerokuRequest.m */; };
+		E344640A14EEE32C0000185B /* StackMobHerokuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CF14EEE32C0000185B /* StackMobHerokuRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640B14EEE32C0000185B /* StackMobHerokuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463CF14EEE32C0000185B /* StackMobHerokuRequest.m */; };
-		E344640C14EEE32C0000185B /* StackMobPushRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D114EEE32C0000185B /* StackMobPushRequest.m */; };
+		E344640C14EEE32C0000185B /* StackMobPushRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D114EEE32C0000185B /* StackMobPushRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640D14EEE32C0000185B /* StackMobPushRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D114EEE32C0000185B /* StackMobPushRequest.m */; };
-		E344640E14EEE32C0000185B /* StackMobQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D314EEE32C0000185B /* StackMobQuery.m */; };
+		E344640E14EEE32C0000185B /* StackMobQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D314EEE32C0000185B /* StackMobQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344640F14EEE32C0000185B /* StackMobQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D314EEE32C0000185B /* StackMobQuery.m */; };
-		E344641014EEE32C0000185B /* StackMobRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D514EEE32C0000185B /* StackMobRequest.m */; };
+		E344641014EEE32C0000185B /* StackMobRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D514EEE32C0000185B /* StackMobRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344641114EEE32C0000185B /* StackMobRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D514EEE32C0000185B /* StackMobRequest.m */; };
-		E344641214EEE32C0000185B /* StackMobSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D714EEE32C0000185B /* StackMobSession.m */; };
+		E344641214EEE32C0000185B /* StackMobSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D714EEE32C0000185B /* StackMobSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344641314EEE32C0000185B /* StackMobSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463D714EEE32C0000185B /* StackMobSession.m */; };
-		E344641414EEE32C0000185B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463DB14EEE32C0000185B /* NSData+Base64.m */; };
+		E344641414EEE32C0000185B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463DB14EEE32C0000185B /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344641514EEE32C0000185B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463DB14EEE32C0000185B /* NSData+Base64.m */; };
-		E344641614EEE32C0000185B /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463DD14EEE32C0000185B /* NSData+JSON.m */; };
+		E344641614EEE32C0000185B /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463DD14EEE32C0000185B /* NSData+JSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E344641714EEE32C0000185B /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463DD14EEE32C0000185B /* NSData+JSON.m */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +118,10 @@
 		100A45CD149AFD39003A8642 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		100A463B149B04E3003A8642 /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLIOS.framework; path = "StackMobStarterProject/StackMob-SDK/External/libraries/YAJLIOS.framework"; sourceTree = "<group>"; };
+		5615C7B71506C091001F2AD2 /* StackMobCookieStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackMobCookieStore.h; path = "../../../ios-sdk/StackMob/StackMobCookieStore.h"; sourceTree = "<group>"; };
+		5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackMobCookieStore.m; path = "../../../ios-sdk/StackMob/StackMobCookieStore.m"; sourceTree = "<group>"; };
+		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E344639D14EEE32C0000185B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E344639F14EEE32C0000185B /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLIOS.framework; sourceTree = "<group>"; };
@@ -252,6 +262,8 @@
 		100A4532149AFBEA003A8642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */,
+				5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */,
 				100A4533149AFBEA003A8642 /* StackMobStarterProject-Info.plist */,
 				100A4534149AFBEA003A8642 /* InfoPlist.strings */,
 				100A4537149AFBEA003A8642 /* main.m */,
@@ -296,6 +308,8 @@
 				E34463CB14EEE32C0000185B /* StackMobClientData.h */,
 				E34463CC14EEE32C0000185B /* StackMobClientData.m */,
 				E34463CD14EEE32C0000185B /* StackMobConfiguration.h */,
+				5615C7B71506C091001F2AD2 /* StackMobCookieStore.h */,
+				5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */,
 				E34463CE14EEE32C0000185B /* StackMobHerokuRequest.h */,
 				E34463CF14EEE32C0000185B /* StackMobHerokuRequest.m */,
 				E34463D014EEE32C0000185B /* StackMobPushRequest.h */,
@@ -476,6 +490,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				100A4536149AFBEA003A8642 /* InfoPlist.strings in Resources */,
+				5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */,
+				5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +500,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				100A455E149AFBEA003A8642 /* InfoPlist.strings in Resources */,
+				5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */,
+				5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +558,7 @@
 				E344641214EEE32C0000185B /* StackMobSession.m in Sources */,
 				E344641414EEE32C0000185B /* NSData+Base64.m in Sources */,
 				E344641614EEE32C0000185B /* NSData+JSON.m in Sources */,
+				5615C7B91506C091001F2AD2 /* StackMobCookieStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +595,7 @@
 				E344641314EEE32C0000185B /* StackMobSession.m in Sources */,
 				E344641514EEE32C0000185B /* NSData+Base64.m in Sources */,
 				E344641714EEE32C0000185B /* NSData+JSON.m in Sources */,
+				5615C7BA1506C091001F2AD2 /* StackMobCookieStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
