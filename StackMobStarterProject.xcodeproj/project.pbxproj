@@ -28,6 +28,7 @@
 		5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
 		5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
+		569A3C88151A866F00DEDABD /* InneractiveAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 569A3C87151A866F00DEDABD /* InneractiveAdSDK.a */; };
 		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DF14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
 		E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
@@ -122,6 +123,8 @@
 		5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackMobCookieStore.m; path = "../../../ios-sdk/StackMob/StackMobCookieStore.m"; sourceTree = "<group>"; };
 		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		569A3C85151A866F00DEDABD /* InneractiveAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InneractiveAd.h; sourceTree = "<group>"; };
+		569A3C87151A866F00DEDABD /* InneractiveAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = InneractiveAdSDK.a; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E344639D14EEE32C0000185B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E344639F14EEE32C0000185B /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLIOS.framework; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 				100A452E149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4530149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
 				E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
+				569A3C88151A866F00DEDABD /* InneractiveAdSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +295,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		569A3C83151A866F00DEDABD /* inneractive */ = {
+			isa = PBXGroup;
+			children = (
+				569A3C84151A866F00DEDABD /* include */,
+				569A3C86151A866F00DEDABD /* lib */,
+			);
+			name = inneractive;
+			path = "../../../../ios-sdk/StackMob/External/inneractive";
+			sourceTree = "<group>";
+		};
+		569A3C84151A866F00DEDABD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				569A3C85151A866F00DEDABD /* InneractiveAd.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		569A3C86151A866F00DEDABD /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				569A3C87151A866F00DEDABD /* InneractiveAdSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		E344639914EEE32C0000185B /* StackMob-SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +360,7 @@
 		E344639A14EEE32C0000185B /* External */ = {
 			isa = PBXGroup;
 			children = (
+				569A3C83151A866F00DEDABD /* inneractive */,
 				E344639B14EEE32C0000185B /* JSONKit */,
 				E344639E14EEE32C0000185B /* libraries */,
 				E34463A014EEE32C0000185B /* OAuthConsumer */,
@@ -687,6 +718,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ios-sdk/StackMob/External/inneractive/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -703,6 +738,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ios-sdk/StackMob/External/inneractive/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

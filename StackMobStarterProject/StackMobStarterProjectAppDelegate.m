@@ -8,6 +8,7 @@
 
 #import "StackMobStarterProjectAppDelegate.h"
 #import "StackMob.h"
+#import "InneractiveAd.h"
 
 @implementation StackMobStarterProjectAppDelegate
 @synthesize window = _window;
