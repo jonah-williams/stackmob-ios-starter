@@ -20,6 +20,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [[StackMob stackmob] startSession];
+    //Uncomment for an example of displaying an ad with Inneractive
+    //[InneractiveAd DisplayAd:@"APP_ID" withType:IaAdType_Banner withRoot:self.window withReload:120];
     return YES;
 }
 
