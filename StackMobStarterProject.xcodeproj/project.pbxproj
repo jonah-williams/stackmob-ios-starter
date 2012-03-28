@@ -22,6 +22,8 @@
 		100A45CE149AFD39003A8642 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CD149AFD39003A8642 /* CFNetwork.framework */; };
 		100A45D0149AFD4E003A8642 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */; };
 		100A463C149B04E3003A8642 /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A463B149B04E3003A8642 /* YAJLIOS.framework */; };
+		560BB2971523A366004BB615 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 560BB2961523A366004BB615 /* SecureUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		560BB2981523A366004BB615 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 560BB2961523A366004BB615 /* SecureUDID.m */; };
 		5615C7B91506C091001F2AD2 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5615C7BA1506C091001F2AD2 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */; };
 		5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
@@ -119,6 +121,8 @@
 		100A45CD149AFD39003A8642 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		100A463B149B04E3003A8642 /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLIOS.framework; path = "StackMobStarterProject/StackMob-SDK/External/libraries/YAJLIOS.framework"; sourceTree = "<group>"; };
+		560BB2951523A366004BB615 /* SecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureUDID.h; sourceTree = "<group>"; };
+		560BB2961523A366004BB615 /* SecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecureUDID.m; sourceTree = "<group>"; };
 		5615C7B71506C091001F2AD2 /* StackMobCookieStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackMobCookieStore.h; path = "../../../ios-sdk/StackMob/StackMobCookieStore.h"; sourceTree = "<group>"; };
 		5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackMobCookieStore.m; path = "../../../ios-sdk/StackMob/StackMobCookieStore.m"; sourceTree = "<group>"; };
 		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
@@ -295,6 +299,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		560BB2941523A366004BB615 /* SecureUDID */ = {
+			isa = PBXGroup;
+			children = (
+				560BB2951523A366004BB615 /* SecureUDID.h */,
+				560BB2961523A366004BB615 /* SecureUDID.m */,
+			);
+			name = SecureUDID;
+			path = "../../../../ios-sdk/StackMob/External/SecureUDID";
+			sourceTree = "<group>";
+		};
 		569A3C83151A866F00DEDABD /* inneractive */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +379,7 @@
 				E344639E14EEE32C0000185B /* libraries */,
 				E34463A014EEE32C0000185B /* OAuthConsumer */,
 				E34463BE14EEE32C0000185B /* reachability */,
+				560BB2941523A366004BB615 /* SecureUDID */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -590,6 +605,7 @@
 				E344641414EEE32C0000185B /* NSData+Base64.m in Sources */,
 				E344641614EEE32C0000185B /* NSData+JSON.m in Sources */,
 				5615C7B91506C091001F2AD2 /* StackMobCookieStore.m in Sources */,
+				560BB2971523A366004BB615 /* SecureUDID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +643,7 @@
 				E344641514EEE32C0000185B /* NSData+Base64.m in Sources */,
 				E344641714EEE32C0000185B /* NSData+JSON.m in Sources */,
 				5615C7BA1506C091001F2AD2 /* StackMobCookieStore.m in Sources */,
+				560BB2981523A366004BB615 /* SecureUDID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
