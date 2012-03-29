@@ -8,6 +8,7 @@
 
 #import "StackMobStarterProjectAppDelegate.h"
 #import "StackMob.h"
+#import "InneractiveAd.h"
 
 @implementation StackMobStarterProjectAppDelegate
 @synthesize window = _window;
@@ -19,6 +20,15 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [[StackMob stackmob] startSession];
+    //Uncomment for an example of displaying an ad with Inneractive
+    //NSMutableDictionary *optionalParams = [[NSMutableDictionary alloc] init];
+    //[optionalParams setObject:@"25" forKey:[NSNumber numberWithInt:Key_Age]];
+    //[optionalParams setObject:@"642" forKey:[NSNumber numberWithInt:Key_Distribution_Id]];
+    //if (![InneractiveAd DisplayAd:@"iOS_Test" withType:IaAdType_Banner withRoot:self.window withReload:120 withParams:optionalParams])
+    //{
+    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"This application is free but requires an internet connection." message:@"Please configure your connectivity settings and re-try." delegate:self cancelButtonTitle:@"Exit" otherButtonTitles:nil] autorelease];
+    // [alert show];
+    //}
     return YES;
 }
 

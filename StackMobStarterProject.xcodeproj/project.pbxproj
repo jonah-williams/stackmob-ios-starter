@@ -24,6 +24,7 @@
 		100A463C149B04E3003A8642 /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A463B149B04E3003A8642 /* YAJLIOS.framework */; };
 		10A4FD671524C222000AB807 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4FD661524C222000AB807 /* StackMobCookieStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		10A4FD6B1524C349000AB807 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4FD6A1524C349000AB807 /* SecureUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		560BB2B915250BC9004BB615 /* InneractiveAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560BB2B815250BC9004BB615 /* InneractiveAdSDK.a */; };
 		5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
@@ -122,6 +123,8 @@
 		10A4FD661524C222000AB807 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackMobCookieStore.m; sourceTree = "<group>"; };
 		10A4FD691524C349000AB807 /* SecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecureUDID.h; path = StackMobStarterProject/StackMob/External/SecureUDID/SecureUDID.h; sourceTree = SOURCE_ROOT; };
 		10A4FD6A1524C349000AB807 /* SecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecureUDID.m; path = StackMobStarterProject/StackMob/External/SecureUDID/SecureUDID.m; sourceTree = SOURCE_ROOT; };
+		560BB2B615250BC9004BB615 /* InneractiveAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InneractiveAd.h; sourceTree = "<group>"; };
+		560BB2B815250BC9004BB615 /* InneractiveAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = InneractiveAdSDK.a; sourceTree = "<group>"; };
 		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -199,6 +202,7 @@
 				100A452E149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4530149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
 				E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
+				560BB2B915250BC9004BB615 /* InneractiveAdSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +307,32 @@
 			path = "../../../../ios-sdk/StackMob/External/SecureUDID";
 			sourceTree = "<group>";
 		};
+		560BB2B415250BC9004BB615 /* inneractive */ = {
+			isa = PBXGroup;
+			children = (
+				560BB2B515250BC9004BB615 /* include */,
+				560BB2B715250BC9004BB615 /* lib */,
+			);
+			name = inneractive;
+			path = "../../../../ios-sdk/StackMob/External/inneractive";
+			sourceTree = "<group>";
+		};
+		560BB2B515250BC9004BB615 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				560BB2B615250BC9004BB615 /* InneractiveAd.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		560BB2B715250BC9004BB615 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				560BB2B815250BC9004BB615 /* InneractiveAdSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		E344639914EEE32C0000185B /* StackMob-SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +372,7 @@
 		E344639A14EEE32C0000185B /* External */ = {
 			isa = PBXGroup;
 			children = (
+				560BB2B415250BC9004BB615 /* inneractive */,
 				E344639B14EEE32C0000185B /* JSONKit */,
 				E344639E14EEE32C0000185B /* libraries */,
 				E34463A014EEE32C0000185B /* OAuthConsumer */,
@@ -700,7 +731,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ios-sdk/StackMob/External/inneractive/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -716,7 +750,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../ios-sdk/StackMob/External/inneractive/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
