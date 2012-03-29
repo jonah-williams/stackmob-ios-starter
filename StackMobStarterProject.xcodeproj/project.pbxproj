@@ -22,15 +22,12 @@
 		100A45CE149AFD39003A8642 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CD149AFD39003A8642 /* CFNetwork.framework */; };
 		100A45D0149AFD4E003A8642 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */; };
 		100A463C149B04E3003A8642 /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A463B149B04E3003A8642 /* YAJLIOS.framework */; };
-		560BB2971523A366004BB615 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 560BB2961523A366004BB615 /* SecureUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		560BB2981523A366004BB615 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 560BB2961523A366004BB615 /* SecureUDID.m */; };
-		5615C7B91506C091001F2AD2 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5615C7BA1506C091001F2AD2 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */; };
+		10A4FD671524C222000AB807 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4FD661524C222000AB807 /* StackMobCookieStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		10A4FD6B1524C349000AB807 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4FD6A1524C349000AB807 /* SecureUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
 		5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
-		569A3C88151A866F00DEDABD /* InneractiveAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 569A3C87151A866F00DEDABD /* InneractiveAdSDK.a */; };
 		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DF14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
 		E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
@@ -121,14 +118,12 @@
 		100A45CD149AFD39003A8642 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		100A463B149B04E3003A8642 /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLIOS.framework; path = "StackMobStarterProject/StackMob-SDK/External/libraries/YAJLIOS.framework"; sourceTree = "<group>"; };
-		560BB2951523A366004BB615 /* SecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureUDID.h; sourceTree = "<group>"; };
-		560BB2961523A366004BB615 /* SecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecureUDID.m; sourceTree = "<group>"; };
-		5615C7B71506C091001F2AD2 /* StackMobCookieStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackMobCookieStore.h; path = "../../../ios-sdk/StackMob/StackMobCookieStore.h"; sourceTree = "<group>"; };
-		5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackMobCookieStore.m; path = "../../../ios-sdk/StackMob/StackMobCookieStore.m"; sourceTree = "<group>"; };
+		10A4FD651524C222000AB807 /* StackMobCookieStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackMobCookieStore.h; sourceTree = "<group>"; };
+		10A4FD661524C222000AB807 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackMobCookieStore.m; sourceTree = "<group>"; };
+		10A4FD691524C349000AB807 /* SecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecureUDID.h; path = StackMobStarterProject/StackMob/External/SecureUDID/SecureUDID.h; sourceTree = SOURCE_ROOT; };
+		10A4FD6A1524C349000AB807 /* SecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecureUDID.m; path = StackMobStarterProject/StackMob/External/SecureUDID/SecureUDID.m; sourceTree = SOURCE_ROOT; };
 		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		569A3C85151A866F00DEDABD /* InneractiveAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InneractiveAd.h; sourceTree = "<group>"; };
-		569A3C87151A866F00DEDABD /* InneractiveAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = InneractiveAdSDK.a; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E344639D14EEE32C0000185B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E344639F14EEE32C0000185B /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLIOS.framework; sourceTree = "<group>"; };
@@ -204,7 +199,6 @@
 				100A452E149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4530149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
 				E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
-				569A3C88151A866F00DEDABD /* InneractiveAdSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,37 +296,11 @@
 		560BB2941523A366004BB615 /* SecureUDID */ = {
 			isa = PBXGroup;
 			children = (
-				560BB2951523A366004BB615 /* SecureUDID.h */,
-				560BB2961523A366004BB615 /* SecureUDID.m */,
+				10A4FD691524C349000AB807 /* SecureUDID.h */,
+				10A4FD6A1524C349000AB807 /* SecureUDID.m */,
 			);
 			name = SecureUDID;
 			path = "../../../../ios-sdk/StackMob/External/SecureUDID";
-			sourceTree = "<group>";
-		};
-		569A3C83151A866F00DEDABD /* inneractive */ = {
-			isa = PBXGroup;
-			children = (
-				569A3C84151A866F00DEDABD /* include */,
-				569A3C86151A866F00DEDABD /* lib */,
-			);
-			name = inneractive;
-			path = "../../../../ios-sdk/StackMob/External/inneractive";
-			sourceTree = "<group>";
-		};
-		569A3C84151A866F00DEDABD /* include */ = {
-			isa = PBXGroup;
-			children = (
-				569A3C85151A866F00DEDABD /* InneractiveAd.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		569A3C86151A866F00DEDABD /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				569A3C87151A866F00DEDABD /* InneractiveAdSDK.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		E344639914EEE32C0000185B /* StackMob-SDK */ = {
@@ -352,8 +320,8 @@
 				E34463CB14EEE32C0000185B /* StackMobClientData.h */,
 				E34463CC14EEE32C0000185B /* StackMobClientData.m */,
 				E34463CD14EEE32C0000185B /* StackMobConfiguration.h */,
-				5615C7B71506C091001F2AD2 /* StackMobCookieStore.h */,
-				5615C7B81506C091001F2AD2 /* StackMobCookieStore.m */,
+				10A4FD651524C222000AB807 /* StackMobCookieStore.h */,
+				10A4FD661524C222000AB807 /* StackMobCookieStore.m */,
 				E34463CE14EEE32C0000185B /* StackMobHerokuRequest.h */,
 				E34463CF14EEE32C0000185B /* StackMobHerokuRequest.m */,
 				E34463D014EEE32C0000185B /* StackMobPushRequest.h */,
@@ -374,7 +342,6 @@
 		E344639A14EEE32C0000185B /* External */ = {
 			isa = PBXGroup;
 			children = (
-				569A3C83151A866F00DEDABD /* inneractive */,
 				E344639B14EEE32C0000185B /* JSONKit */,
 				E344639E14EEE32C0000185B /* libraries */,
 				E34463A014EEE32C0000185B /* OAuthConsumer */,
@@ -604,8 +571,8 @@
 				E344641214EEE32C0000185B /* StackMobSession.m in Sources */,
 				E344641414EEE32C0000185B /* NSData+Base64.m in Sources */,
 				E344641614EEE32C0000185B /* NSData+JSON.m in Sources */,
-				5615C7B91506C091001F2AD2 /* StackMobCookieStore.m in Sources */,
-				560BB2971523A366004BB615 /* SecureUDID.m in Sources */,
+				10A4FD671524C222000AB807 /* StackMobCookieStore.m in Sources */,
+				10A4FD6B1524C349000AB807 /* SecureUDID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,8 +609,6 @@
 				E344641314EEE32C0000185B /* StackMobSession.m in Sources */,
 				E344641514EEE32C0000185B /* NSData+Base64.m in Sources */,
 				E344641714EEE32C0000185B /* NSData+JSON.m in Sources */,
-				5615C7BA1506C091001F2AD2 /* StackMobCookieStore.m in Sources */,
-				560BB2981523A366004BB615 /* SecureUDID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +663,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -729,16 +695,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/StackMobStarterProject/StackMob-SDK/External/libraries\"",
 					"\"$(SRCROOT)/StackMobStarterProject/StackMob/External/libraries\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../ios-sdk/StackMob/External/inneractive/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -749,16 +711,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/StackMobStarterProject/StackMob-SDK/External/libraries\"",
 					"\"$(SRCROOT)/StackMobStarterProject/StackMob/External/libraries\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../ios-sdk/StackMob/External/inneractive/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
