@@ -46,7 +46,7 @@ static StackMobClientData * _sharedInstance=nil;
 	if((self = [super init])) {
 		// Device info.
 		UIDevice *device = [UIDevice currentDevice];
-		identifier = [SecureUDID UDIDForDomain:@"com.stackmob" salt:@"828e4a5771d696176b1c6a3e0579858a"];
+		identifier = [SecureUDID UDIDForDomain:@"com.stackmob" salt:STACKMOB_UDID_SALT];
 		model = [[device model] retain];
 		systemVersion = [[device systemVersion] retain];
 		
