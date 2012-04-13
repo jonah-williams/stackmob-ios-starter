@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import "StackMobClientData.h"
-#import "SecureUDID.h"
+#import "External/SecureUDID/SecureUDID.h"
 #import <UIKit/UIKit.h>
 #import "Reachability.h"
 #include <sys/sysctl.h>
@@ -46,7 +46,7 @@ static StackMobClientData * _sharedInstance=nil;
 	if((self = [super init])) {
 		// Device info.
 		UIDevice *device = [UIDevice currentDevice];
-		identifier = [SecureUDID UDIDForDomain:@"com.stackmob" salt:STACKMOB_UDID_SALT];
+		identifier = [SecureUDID UDIDForDomain:@"com.stackmob" usingKey:STACKMOB_UDID_SALT];
 		model = [[device model] retain];
 		systemVersion = [[device systemVersion] retain];
 		
