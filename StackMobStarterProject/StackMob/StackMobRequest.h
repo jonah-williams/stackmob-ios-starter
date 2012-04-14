@@ -50,7 +50,7 @@ typedef enum {
 	StackMobSession *session;
 }
 
-@property(readwrite, retain) id delegate;
+@property(readwrite, retain) id<SMRequestDelegate> delegate;
 @property(readwrite, copy) NSString* method;
 @property(readwrite, copy) NSString* httpMethod;
 @property(readwrite) BOOL isSecure;
