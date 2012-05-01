@@ -41,8 +41,8 @@
             preparedArgVal = argumentValue;
         }
                    
-        NSString *escapedKey   = [(NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)argumentKey, NULL, CFSTR("?=&+;"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) autorelease];
-		NSString *escapedValue = [(NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)preparedArgVal, NULL, CFSTR("?=&+;"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) autorelease];
+        NSString *escapedKey   = [(NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)argumentKey, NULL, CFSTR("?=&+;|"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) autorelease];
+		NSString *escapedValue = [(NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)preparedArgVal, NULL, CFSTR("?=&+;|"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) autorelease];
 		[encodedPieces addObject:[NSString stringWithFormat:@"%@=%@", escapedKey, escapedValue]];
 	}
 	

@@ -30,20 +30,20 @@ typedef enum {
 
 @interface StackMobRequest : NSObject
 {
-	NSURLConnection*		mConnection;
-	id<SMRequestDelegate>	mDelegate;
-	SEL						mSelector;
-    BOOL          mIsSecure;
-	NSString*				mMethod;
-	NSMutableDictionary*	mArguments;
+    NSURLConnection*        mConnection;
+    id<SMRequestDelegate>   mDelegate;
+    SEL                     mSelector;
+    BOOL                    mIsSecure;
+    NSString*               mMethod;
+    NSMutableDictionary*    mArguments;
     NSMutableDictionary*    mHeaders;
     NSData*                 mBody;
-	NSMutableData*			mConnectionData;
-	NSDictionary*			mResult;
+    NSMutableData*          mConnectionData;
+    NSDictionary*           mResult;
     NSError*                mConnectionError;
-	BOOL					_requestFinished;
-	NSString*				mHttpMethod;
-	NSHTTPURLResponse*		mHttpResponse;
+    BOOL                    _requestFinished;
+    NSString*               mHttpMethod;
+    NSHTTPURLResponse*      mHttpResponse;
 	
 	@protected
     BOOL userBased;
@@ -131,6 +131,8 @@ typedef enum {
 
 // return the post body as NSData
 - (NSData *)postBody;
+
+- (int)totalObjectCountFromPagination;
 
 /* translate enum to string */
 + (NSString*)stringFromHttpVerb:(SMHttpVerb)httpVerb;

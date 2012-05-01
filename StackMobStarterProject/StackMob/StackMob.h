@@ -351,6 +351,13 @@ typedef void (^StackMobCallback)(BOOL success, id result);
                 shouldCascade:(BOOL)isCascade
                  withCallback:(StackMobCallback)callback;
 
+- (StackMobRequest *)count:(NSString *)schema 
+              withCallback:(StackMobCallback)callback;
+
+- (StackMobRequest *)count:(NSString *)schema
+                 withQuery:(StackMobQuery *)query
+              andCallback:(StackMobCallback)callback;
+
 
 
 /**************** Heroku Methods *****************/
@@ -399,6 +406,16 @@ typedef void (^StackMobCallback)(BOOL success, id result);
  * Resets the password of a logged in user
  */
 - (StackMobRequest *)resetPasswordWithOldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword andCallback:(StackMobCallback)callback;
+
+// Logged in user checking
+- (NSString *) loggedInUser;
+
+- (BOOL) isLoggedIn;
+
+- (BOOL) isUserLoggedIn:(NSString *)username;
+
+- (BOOL) isLoggedOut;
+
 
 @end
 

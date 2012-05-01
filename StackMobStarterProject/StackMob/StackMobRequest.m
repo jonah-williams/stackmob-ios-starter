@@ -56,6 +56,7 @@
 	[mHttpMethod release];
 	[mHttpResponse release];
     [mHeaders release];    
+    [mArguments release];
 	[super dealloc];
 }
 
@@ -271,8 +272,9 @@
 																   consumer:consumer
 																	  token:nil
 																	  realm:nil
-                                    
-														  signatureProvider:nil]; // use the default method, HMAC-SHA1
+														  signatureProvider:nil // use the default method, HMAC-SHA1
+                                                                      nonce:nil
+                                                                  timestamp:[NSString stringWithFormat:@"%d", (long) [session.serverTime timeIntervalSince1970]]];
     SMLog(@"httpMethod %@", [self httpMethod]);
     if([self.method isEqualToString:@"startsession"]){
         [mArguments setValue:[StackMobClientData sharedClientData].clientDataString forKey:@"cd"];
@@ -329,6 +331,25 @@
     return [StackMobRequest JsonifyNSDictionary:mArguments withErrorOutput:&error];
 }
 
+- (int)totalObjectCountFromPagination 
+{
+    if(mHttpResponse != nil) 
+    {
+        NSString *contentRange = [[mHttpResponse allHeaderFields] valueForKey:@"Content-Range"];
+        if(contentRange != nil) {
+            NSArray* parts = [contentRange componentsSeparatedByString: @"/"];
+            if([parts count] != 2) return -1;
+            NSString *lastPart = [parts objectAtIndex: 1];
+            if([lastPart isEqualToString:@"*"]) return -2;
+            if([lastPart isEqualToString:@"0"]) return 0;
+            int count = [lastPart intValue];
+            if(count == 0) return -1; //real zero was filtered out above
+            return count;
+        }
+    }
+    return -1;
+}
+
 - (void)cancel
 {
 	[self.connection cancel];
@@ -382,6 +403,8 @@
         textResult = [[[NSString alloc] initWithData:mConnectionData encoding:NSUTF8StringEncoding] autorelease];
         SMLog(@"RESPONSE BODY %@", textResult);
     }
+    
+    [session recordServerTimeDiffFromHeader:[[mHttpResponse allHeaderFields] valueForKey:@"Date"]];
     
     
     if (textResult == nil) {
@@ -449,7 +472,9 @@
 																   consumer:consumer
 																	  token:nil   // we don't need a token
 																	  realm:nil   // should we set a realm?
-														  signatureProvider:nil] autorelease]; // use the default method, HMAC-SHA1
+														  signatureProvider:nil
+                                                                      nonce:nil
+                                                                  timestamp:[NSString stringWithFormat:@"%d", (long) [session.serverTime timeIntervalSince1970]]] autorelease]; // use the default method, HMAC-SHA1
 	[consumer release];
 	[request setHTTPMethod:[self httpMethod]];
 	

@@ -23,6 +23,7 @@ typedef enum {
 + (StackMobQuery *)query;
 
 - (void)field:(NSString *)f mustEqualValue:(id)v;
+- (void)field:(NSString *)f mustNotEqualValue:(id)v;
 - (void)field:(NSString *)f mustBeLessThanValue:(id)v;
 - (void)field:(NSString *)f mustBeLessThanOrEqualToValue:(id)v;
 - (void)field:(NSString *)f mustBeGreaterThanValue:(id)v;
@@ -34,6 +35,8 @@ typedef enum {
 - (void)field:(NSString *)f mustBeNear:(SMGeoPoint *)point;
 - (void)field:(NSString *)f mustBeNear:(SMGeoPoint *)point withinMi:(double)radiusInMi;
 - (void)field:(NSString *)f mustBeNear:(SMGeoPoint *)point withinKm:(double)radiusInKm;
+- (void)fieldMustBeNull:(NSString *)f;
+- (void)fieldMustNotBeNull:(NSString *)f;
 - (void)setExpandDepth:(NSUInteger)depth;
 - (void)setSelectionToFields:(NSArray *)fields;
 - (void)setRangeStart:(NSUInteger)start andEnd:(NSUInteger)end;

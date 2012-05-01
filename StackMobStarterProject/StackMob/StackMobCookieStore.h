@@ -21,4 +21,5 @@
 
 - (void) addCookies:(StackMobRequest *)request;
 - (NSString *) cookieHeader;
+- (NSHTTPCookie *) sessionCookie;
 @end

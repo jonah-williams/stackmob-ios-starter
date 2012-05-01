@@ -39,6 +39,10 @@ const double earthRadiamInKm = 6367.5;
     [self.params setValue:v forKey:f];
 }
 
+- (void)field:(NSString *)f mustNotEqualValue:(id)v {
+    [self.params setValue:v forKey:[self keyForField:f andOperator:@"ne"]];
+}
+     
 - (void)field:(NSString *)f mustBeLessThanValue:(id)v {
     [self.params setValue:v forKey:[self keyForField:f andOperator:@"lt"]];  
 }
@@ -84,6 +88,14 @@ const double earthRadiamInKm = 6367.5;
 - (void)field:(NSString *)f mustBeWithinBoxWithLowerLeft:(SMGeoPoint *)lowerLeft andUpperRight:(SMGeoPoint *)upperRight {
     NSString *boxString = [NSString stringWithFormat:@"%@,%@", [lowerLeft stringValue], [upperRight stringValue]];
     [self.params setValue:boxString forKey:[self keyForField:f andOperator:@"within"]];
+}
+
+- (void)fieldMustBeNull:(NSString *)f  {
+    [self.params setValue:@"true" forKey:[self keyForField:f andOperator:@"null"]];
+}
+
+- (void)fieldMustNotBeNull:(NSString *)f  {
+    [self.params setValue:@"false" forKey:[self keyForField:f andOperator:@"null"]];
 }
 
 - (void)setExpandDepth:(NSUInteger)depth {

@@ -70,4 +70,13 @@ static NSString *cookieStoreKey;
     [cookies release];
     return cookieString;
 }
+
+- (NSHTTPCookie *) sessionCookie
+{
+    NSMutableDictionary *cookies = [self initCookies];
+    for(NSHTTPCookie *cookie in [cookies allValues]) {
+        if([[cookie name] rangeOfString:@"session_"].location == 0) return cookie;
+    }
+    return nil;
+}
 @end
