@@ -12,39 +12,19 @@
 
 @implementation StackMobStarterProjectAppDelegate
 @synthesize window = _window;
+@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     [[StackMob stackmob] startSession];
     //Uncomment for an example of displaying an ad with Inneractive
-    //NSMutableDictionary *optionalParams = [[NSMutableDictionary alloc] init];
-    //[optionalParams setObject:@"25" forKey:[NSNumber numberWithInt:Key_Age]];
-    //[optionalParams setObject:@"642" forKey:[NSNumber numberWithInt:Key_Distribution_Id]];
-    //if (![InneractiveAd DisplayAd:@"iOS_Test" withType:IaAdType_Banner withRoot:self.window withReload:120 withParams:optionalParams])
-    //{
-    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"This application is free but requires an internet connection." message:@"Please configure your connectivity settings and re-try." delegate:self cancelButtonTitle:@"Exit" otherButtonTitles:nil] autorelease];
-    // [alert show];
-    //}
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdRecieved:) name:@"IaAdRecieved" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaDefaultAdRecieved:) name:@"IaDefaultAdRecieved" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdFailed:) name:@"IaAdFailed" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdClicked:) name:@"IaAdClicked" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdWillShow:) name:@"IaAdWillShow" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdDidShow:) name:@"IaAdDidShow" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdWillHide:) name:@"IaAdWillHide" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdDidHide:) name:@"IaAdDidHide" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdWillClose:) name:@"IaAdWillClose" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdDidClose:) name:@"IaAdDidClose" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdWillResize:) name:@"IaAdWillResize" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdDidResize:) name:@"IaAdDidResize" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdWillExpand:) name:@"IaAdWillExpand" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAdDidExpand:) name:@"IaAdDidExpand" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAppShouldSuspend:) name:@"IaAppShouldSuspend" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iaAppShouldResume:) name:@"IaAppShouldResume" object:nil];
+    //self.viewController = [[InneractiveViewViewController alloc] init];
+	//self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -90,82 +70,5 @@
      See also applicationDidEnterBackground:.
      */
     [[StackMob stackmob] endSession];
-}
-
-- (IBAction)iaAdRecieved:(id)sender
-{
-    // The ad view has finished loading a paid ad
-}
-- (IBAction)iaDefaultAdRecieved:(id)sender
-{
-    // The ad view has finished loading a default ad
-}
-- (IBAction)iaAdFailed:(id)sender
-{
-    // The ad view has failed to load an ad
-}
-- (IBAction)iaAdClicked:(id)sender
-{
-    // The ad has been clicked
-}
-
-- (IBAction)iaAdWillShow:(id)sender
-{
-    // The ad is about to show
-}
-
-- (IBAction)iaAdDidShow:(id)sender
-{
-    // The ad did show
-}
-
-- (IBAction)iaAdWillHide:(id)sender
-{
-    // The ad is about to hide
-}
-
-- (IBAction)iaAdDidHide:(id)sender
-{
-    // The ad did hide
-}
-
-- (IBAction)iaAdWillClose:(id)sender
-{
-    // The ad is about to close
-}
-
-- (IBAction)iaAdDidClose:(id)sender
-{
-    // The ad did close
-}
-
-- (IBAction)iaAdWillResize:(id)sender
-{
-    // The ad is about to resize
-}
-
-- (IBAction)iaAdDidResize:(id)sender
-{
-    // The ad did resize
-}
-
-- (IBAction)iaAdWillExpand:(id)sender
-{
-    // The ad is about to expand
-}
-
-- (IBAction)iaAdDidExpand:(id)sender
-{
-    // The ad did expand
-}
-
-- (IBAction)iaAppShouldSuspend:(id)sender
-{
-    // The app should suspend (for example, when the ad expands)
-}
-
-- (IBAction)iaAppShouldResume:(id)sender
-{
-    // The app should resume (for example, when the ad collapses)
 }
 @end

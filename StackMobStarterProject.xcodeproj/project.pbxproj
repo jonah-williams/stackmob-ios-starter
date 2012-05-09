@@ -29,6 +29,7 @@
 		5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
 		5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
+		561FC8A4155AB77500C0B342 /* InneractiveViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561FC8A3155AB77500C0B342 /* InneractiveViewViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DF14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
 		E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
@@ -127,6 +128,8 @@
 		560BB2B815250BC9004BB615 /* InneractiveAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = InneractiveAdSDK.a; sourceTree = "<group>"; };
 		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		561FC8A2155AB77500C0B342 /* InneractiveViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InneractiveViewViewController.h; sourceTree = "<group>"; };
+		561FC8A3155AB77500C0B342 /* InneractiveViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InneractiveViewViewController.m; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E344639D14EEE32C0000185B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		E344639F14EEE32C0000185B /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLIOS.framework; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				E344639914EEE32C0000185B /* StackMob-SDK */,
 				100A453A149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.h */,
 				100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */,
+				561FC8A2155AB77500C0B342 /* InneractiveViewViewController.h */,
+				561FC8A3155AB77500C0B342 /* InneractiveViewViewController.m */,
 				100A4532149AFBEA003A8642 /* Supporting Files */,
 			);
 			path = StackMobStarterProject;
@@ -604,6 +609,7 @@
 				E344641614EEE32C0000185B /* NSData+JSON.m in Sources */,
 				10A4FD671524C222000AB807 /* StackMobCookieStore.m in Sources */,
 				10A4FD6B1524C349000AB807 /* SecureUDID.m in Sources */,
+				561FC8A4155AB77500C0B342 /* InneractiveViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
