@@ -36,8 +36,6 @@
 		DE5A104C15633F6700A2AC6B /* DeleteObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A104B15633F6700A2AC6B /* DeleteObjectViewController.m */; };
 		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DF14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
-		E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
-		E34463E114EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
 		E34463E214EEE32C0000185B /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E34463A214EEE32C0000185B /* Base64Transcoder.c */; };
 		E34463E314EEE32C0000185B /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E34463A214EEE32C0000185B /* Base64Transcoder.c */; };
 		E34463E414EEE32C0000185B /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A514EEE32C0000185B /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -144,7 +142,6 @@
 		DE5A104B15633F6700A2AC6B /* DeleteObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeleteObjectViewController.m; path = ../DeleteObjectViewController.m; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E344639D14EEE32C0000185B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		E344639F14EEE32C0000185B /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLIOS.framework; path = StackMobStarterProject/StackMob/External/libraries/YAJLIOS.framework; sourceTree = "<group>"; };
 		E34463A214EEE32C0000185B /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
 		E34463A314EEE32C0000185B /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
 		E34463A414EEE32C0000185B /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
@@ -215,7 +212,6 @@
 				100A452C149AFBEA003A8642 /* UIKit.framework in Frameworks */,
 				100A452E149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4530149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
-				E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
 				561FC8B0155AC23700C0B342 /* InneractiveAdSDK-v112-S.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +224,6 @@
 				100A4554149AFBEA003A8642 /* UIKit.framework in Frameworks */,
 				100A4555149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4556149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
-				E34463E114EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +252,6 @@
 		100A452A149AFBEA003A8642 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E344639F14EEE32C0000185B /* YAJLIOS.framework */,
 				100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */,
 				100A45CD149AFD39003A8642 /* CFNetwork.framework */,
 				100A452B149AFBEA003A8642 /* UIKit.framework */,
