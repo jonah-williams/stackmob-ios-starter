@@ -8,28 +8,34 @@
 
 #import "StackMobStarterProjectAppDelegate.h"
 #import "StackMob.h"
-#import "InneractiveAd.h"
+
+NSString * const OBJECT_ID = @"object_id";
+NSString * const SCHEMA_NAME = @"schemaName";
+NSString * const KEY = @"key";
 
 @implementation StackMobStarterProjectAppDelegate
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize dictionaryForObject = _dictionaryForObject;
+@synthesize objectCreated;
+
+- (void)dealloc
+{
+    [_dictionaryForObject release];
+    [_window release];
+    [super dealloc];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    // Start up the StackMob session, using values from StackMobConfiguration.h
     [[StackMob stackmob] startSession];
-    //Uncomment for an example of displaying an ad with Inneractive
-    //self.viewController = [[InneractiveViewViewController alloc] init];
-	//self.window.rootViewController = self.viewController;
+    
+    // Initialize variables
+    _dictionaryForObject = [[NSMutableDictionary alloc] init];
+    objectCreated = NO;
     [self.window makeKeyAndVisible];
 
     return YES;
-}
-
--(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    exit(0); 
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -69,6 +75,8 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    
+    // End the StackMob session before we terminate the application
     [[StackMob stackmob] endSession];
 }
 @end

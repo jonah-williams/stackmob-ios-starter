@@ -21,19 +21,19 @@
 		100A4561149AFBEA003A8642 /* StackMobStarterProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 100A4560149AFBEA003A8642 /* StackMobStarterProjectTests.m */; };
 		100A45CE149AFD39003A8642 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CD149AFD39003A8642 /* CFNetwork.framework */; };
 		100A45D0149AFD4E003A8642 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */; };
-		100A463C149B04E3003A8642 /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100A463B149B04E3003A8642 /* YAJLIOS.framework */; };
 		10A4FD671524C222000AB807 /* StackMobCookieStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4FD661524C222000AB807 /* StackMobCookieStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		10A4FD6B1524C349000AB807 /* SecureUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4FD6A1524C349000AB807 /* SecureUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
-		5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */; };
 		5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
 		5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */; };
 		561FC8A4155AB77500C0B342 /* InneractiveViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 561FC8A3155AB77500C0B342 /* InneractiveViewViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		561FC8B0155AC23700C0B342 /* InneractiveAdSDK-v112-S.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561FC8AF155AC23700C0B342 /* InneractiveAdSDK-v112-S.a */; };
+		DE12E031156584AB0098D3F9 /* InneractiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12E030156584AB0098D3F9 /* InneractiveView.storyboard */; };
+		DE4F06BA1566C388008F86C5 /* DeleteObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4F06B91566C387008F86C5 /* DeleteObjectViewController.m */; };
+		DE5A103E1563143600A2AC6B /* CreateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A103D1563143600A2AC6B /* CreateObjectViewController.m */; };
+		DE5A104615633E8B00A2AC6B /* ReadObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A104515633E8B00A2AC6B /* ReadObjectViewController.m */; };
+		DE5A104915633F5900A2AC6B /* UpdateObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5A104815633F5900A2AC6B /* UpdateObjectViewController.m */; };
 		E34463DE14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E34463DF14EEE32C0000185B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E344639D14EEE32C0000185B /* JSONKit.m */; };
-		E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
-		E34463E114EEE32C0000185B /* YAJLIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E344639F14EEE32C0000185B /* YAJLIOS.framework */; };
 		E34463E214EEE32C0000185B /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E34463A214EEE32C0000185B /* Base64Transcoder.c */; };
 		E34463E314EEE32C0000185B /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E34463A214EEE32C0000185B /* Base64Transcoder.c */; };
 		E34463E414EEE32C0000185B /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E34463A514EEE32C0000185B /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -119,20 +119,26 @@
 		100A4560149AFBEA003A8642 /* StackMobStarterProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackMobStarterProjectTests.m; sourceTree = "<group>"; };
 		100A45CD149AFD39003A8642 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		100A463B149B04E3003A8642 /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLIOS.framework; path = "StackMobStarterProject/StackMob-SDK/External/libraries/YAJLIOS.framework"; sourceTree = "<group>"; };
 		10A4FD651524C222000AB807 /* StackMobCookieStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackMobCookieStore.h; sourceTree = "<group>"; };
 		10A4FD661524C222000AB807 /* StackMobCookieStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackMobCookieStore.m; sourceTree = "<group>"; };
 		10A4FD691524C349000AB807 /* SecureUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecureUDID.h; path = StackMobStarterProject/StackMob/External/SecureUDID/SecureUDID.h; sourceTree = SOURCE_ROOT; };
 		10A4FD6A1524C349000AB807 /* SecureUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecureUDID.m; path = StackMobStarterProject/StackMob/External/SecureUDID/SecureUDID.m; sourceTree = SOURCE_ROOT; };
-		5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		561FC8A2155AB77500C0B342 /* InneractiveViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InneractiveViewViewController.h; sourceTree = "<group>"; };
 		561FC8A3155AB77500C0B342 /* InneractiveViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InneractiveViewViewController.m; sourceTree = "<group>"; };
 		561FC8AF155AC23700C0B342 /* InneractiveAdSDK-v112-S.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "InneractiveAdSDK-v112-S.a"; path = "StackMobStarterProject/StackMob/External/inneractive/lib/InneractiveAdSDK-v112-S.a"; sourceTree = SOURCE_ROOT; };
+		DE12E030156584AB0098D3F9 /* InneractiveView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InneractiveView.storyboard; sourceTree = "<group>"; };
 		DE26701A1561F5B500F72AB3 /* InneractiveAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InneractiveAd.h; path = StackMobStarterProject/StackMob/External/inneractive/include/InneractiveAd.h; sourceTree = SOURCE_ROOT; };
+		DE4F06B81566C387008F86C5 /* DeleteObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteObjectViewController.h; sourceTree = "<group>"; };
+		DE4F06B91566C387008F86C5 /* DeleteObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteObjectViewController.m; sourceTree = "<group>"; };
+		DE5A103C1563143600A2AC6B /* CreateObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateObjectViewController.h; sourceTree = "<group>"; };
+		DE5A103D1563143600A2AC6B /* CreateObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateObjectViewController.m; sourceTree = "<group>"; };
+		DE5A104415633E8B00A2AC6B /* ReadObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadObjectViewController.h; sourceTree = "<group>"; };
+		DE5A104515633E8B00A2AC6B /* ReadObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadObjectViewController.m; sourceTree = "<group>"; };
+		DE5A104715633F5900A2AC6B /* UpdateObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateObjectViewController.h; sourceTree = "<group>"; };
+		DE5A104815633F5900A2AC6B /* UpdateObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateObjectViewController.m; sourceTree = "<group>"; };
 		E344639C14EEE32C0000185B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E344639D14EEE32C0000185B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		E344639F14EEE32C0000185B /* YAJLIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJLIOS.framework; sourceTree = "<group>"; };
 		E34463A214EEE32C0000185B /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
 		E34463A314EEE32C0000185B /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
 		E34463A414EEE32C0000185B /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
@@ -198,13 +204,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				100A463C149B04E3003A8642 /* YAJLIOS.framework in Frameworks */,
 				100A45D0149AFD4E003A8642 /* SystemConfiguration.framework in Frameworks */,
 				100A45CE149AFD39003A8642 /* CFNetwork.framework in Frameworks */,
 				100A452C149AFBEA003A8642 /* UIKit.framework in Frameworks */,
 				100A452E149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4530149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
-				E34463E014EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
 				561FC8B0155AC23700C0B342 /* InneractiveAdSDK-v112-S.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +221,6 @@
 				100A4554149AFBEA003A8642 /* UIKit.framework in Frameworks */,
 				100A4555149AFBEA003A8642 /* Foundation.framework in Frameworks */,
 				100A4556149AFBEA003A8642 /* CoreGraphics.framework in Frameworks */,
-				E34463E114EEE32C0000185B /* YAJLIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +249,6 @@
 		100A452A149AFBEA003A8642 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				100A463B149B04E3003A8642 /* YAJLIOS.framework */,
 				100A45CF149AFD4E003A8642 /* SystemConfiguration.framework */,
 				100A45CD149AFD39003A8642 /* CFNetwork.framework */,
 				100A452B149AFBEA003A8642 /* UIKit.framework */,
@@ -265,6 +267,14 @@
 				100A453B149AFBEA003A8642 /* StackMobStarterProjectAppDelegate.m */,
 				561FC8A2155AB77500C0B342 /* InneractiveViewViewController.h */,
 				561FC8A3155AB77500C0B342 /* InneractiveViewViewController.m */,
+				DE5A103C1563143600A2AC6B /* CreateObjectViewController.h */,
+				DE5A103D1563143600A2AC6B /* CreateObjectViewController.m */,
+				DE5A104415633E8B00A2AC6B /* ReadObjectViewController.h */,
+				DE5A104515633E8B00A2AC6B /* ReadObjectViewController.m */,
+				DE5A104715633F5900A2AC6B /* UpdateObjectViewController.h */,
+				DE5A104815633F5900A2AC6B /* UpdateObjectViewController.m */,
+				DE4F06B81566C387008F86C5 /* DeleteObjectViewController.h */,
+				DE4F06B91566C387008F86C5 /* DeleteObjectViewController.m */,
 				100A4532149AFBEA003A8642 /* Supporting Files */,
 			);
 			path = StackMobStarterProject;
@@ -273,8 +283,8 @@
 		100A4532149AFBEA003A8642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE12E030156584AB0098D3F9 /* InneractiveView.storyboard */,
 				5615C7C11506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard */,
-				5615C7BE1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard */,
 				100A4533149AFBEA003A8642 /* StackMobStarterProject-Info.plist */,
 				100A4534149AFBEA003A8642 /* InfoPlist.strings */,
 				100A4537149AFBEA003A8642 /* main.m */,
@@ -379,7 +389,6 @@
 			children = (
 				560BB2B415250BC9004BB615 /* inneractive */,
 				E344639B14EEE32C0000185B /* JSONKit */,
-				E344639E14EEE32C0000185B /* libraries */,
 				E34463A014EEE32C0000185B /* OAuthConsumer */,
 				E34463BE14EEE32C0000185B /* reachability */,
 				560BB2941523A366004BB615 /* SecureUDID */,
@@ -394,14 +403,6 @@
 				E344639D14EEE32C0000185B /* JSONKit.m */,
 			);
 			path = JSONKit;
-			sourceTree = "<group>";
-		};
-		E344639E14EEE32C0000185B /* libraries */ = {
-			isa = PBXGroup;
-			children = (
-				E344639F14EEE32C0000185B /* YAJLIOS.framework */,
-			);
-			path = libraries;
 			sourceTree = "<group>";
 		};
 		E34463A014EEE32C0000185B /* OAuthConsumer */ = {
@@ -539,8 +540,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				100A4536149AFBEA003A8642 /* InfoPlist.strings in Resources */,
-				5615C7BF1506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */,
 				5615C7C21506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */,
+				DE12E031156584AB0098D3F9 /* InneractiveView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +550,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				100A455E149AFBEA003A8642 /* InfoPlist.strings in Resources */,
-				5615C7C01506C1F6001F2AD2 /* MainStoryboard_iPad.storyboard in Resources */,
 				5615C7C31506C26E001F2AD2 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +610,10 @@
 				10A4FD671524C222000AB807 /* StackMobCookieStore.m in Sources */,
 				10A4FD6B1524C349000AB807 /* SecureUDID.m in Sources */,
 				561FC8A4155AB77500C0B342 /* InneractiveViewViewController.m in Sources */,
+				DE5A103E1563143600A2AC6B /* CreateObjectViewController.m in Sources */,
+				DE5A104615633E8B00A2AC6B /* ReadObjectViewController.m in Sources */,
+				DE5A104915633F5900A2AC6B /* UpdateObjectViewController.m in Sources */,
+				DE4F06BA1566C388008F86C5 /* DeleteObjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +688,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -711,7 +715,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -730,10 +734,7 @@
 		100A4565149AFBEA003A8642 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/StackMobStarterProject/StackMob/External/libraries\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
@@ -749,10 +750,7 @@
 		100A4566149AFBEA003A8642 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/StackMobStarterProject/StackMob/External/libraries\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";

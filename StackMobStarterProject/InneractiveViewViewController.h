@@ -6,6 +6,14 @@
 //  Copyright (c) 2012 StackMob. All rights reserved.
 //
 
+/*
+ 
+ The inneractive view controller allows you to build an app with ads.  To see an example, go to StackMobStartProject-Info.plist and change the value of key "Main storyboard file base name" to InneractiveView.
+ 
+ Change it back to MainStoryboard_iPhone to revert back to the original demo.
+ 
+ */
+
 #import <UIKit/UIKit.h>
 #import "InneractiveAd.h"
 
