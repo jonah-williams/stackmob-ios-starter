@@ -1,5 +1,23 @@
-# ignoring userdata we don't need to push
-
-xcuserdata/
-project.xcworkspace/
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+*.off
+*.old
 .DS_Store
+
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+
+build/**/*
+
+# XCode user local
+StackMobiOS.xcodeproj/xcuserdata/**/*
+StackMobiOS.xcodeproj/project.xcworkspace/**/*
+StackMobiOS.xcodeproj/project.xcworkspace/*
