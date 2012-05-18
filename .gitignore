@@ -18,6 +18,6 @@ syntax: glob
 build/**/*
 
 # XCode user local
-StackMobiOS.xcodeproj/xcuserdata/**/*
-StackMobiOS.xcodeproj/project.xcworkspace/**/*
-StackMobiOS.xcodeproj/project.xcworkspace/*
+*.xcodeproj/xcuserdata/**/*
+*.xcodeproj/project.xcworkspace/**/*
+*.xcodeproj/project.xcworkspace/*
