@@ -734,10 +734,7 @@
 		100A4565149AFBEA003A8642 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/StackMobStarterProject/StackMob/External/libraries\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
@@ -753,10 +750,7 @@
 		100A4566149AFBEA003A8642 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/StackMobStarterProject/StackMob/External/libraries\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackMobStarterProject/StackMobStarterProject-Prefix.pch";
 				INFOPLIST_FILE = "StackMobStarterProject/StackMobStarterProject-Info.plist";
