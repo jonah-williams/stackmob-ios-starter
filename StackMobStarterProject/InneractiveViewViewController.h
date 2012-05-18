@@ -8,7 +8,7 @@
 
 /*
  
- The Inneractive View allows you to build an app with ads.  To see an example of the Inneractive View, go to StackMobStartProject-Info.plist and change the value of key "Main storyboard file base name" to InneractiveView.
+ The inneractive view controller allows you to build an app with ads.  To see an example, go to StackMobStartProject-Info.plist and change the value of key "Main storyboard file base name" to InneractiveView.
  
  Change it back to MainStoryboard_iPhone to revert back to the original demo.
  

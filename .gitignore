@@ -1,0 +1,5 @@
+# ignoring userdata we don't need to push
+
+xcuserdata/
+project.xcworkspace/
+.DS_Store
