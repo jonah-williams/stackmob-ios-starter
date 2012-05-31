@@ -40,13 +40,31 @@
         } else {
             preparedArgVal = argumentValue;
         }
-                   
+        
         NSString *escapedKey   = [(NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)argumentKey, NULL, CFSTR("?=&+;|"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) autorelease];
 		NSString *escapedValue = [(NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)preparedArgVal, NULL, CFSTR("?=&+;|"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) autorelease];
 		[encodedPieces addObject:[NSString stringWithFormat:@"%@=%@", escapedKey, escapedValue]];
 	}
 	
 	return [encodedPieces componentsJoinedByString:@"&"];
+}
+
+- (NSDictionary *)updateCounterForFieldAndReturnDictionary:(NSString *)field by:(int)value
+{
+    NSMutableDictionary *temp = [[self mutableCopy] autorelease];
+    [temp setObject:[NSNumber numberWithInt:value] forKey:[NSString stringWithFormat:@"%@[inc]", field]];
+    //NSDictionary *new = [[temp copy] retain];
+    return [temp copy];
+    
+}
+
+@end
+
+@implementation NSMutableDictionary (StackMobAdditions)
+
+- (void)updateCounterForField:(NSString *)field by:(int)value
+{
+    [self setObject:[NSNumber numberWithInt:value] forKey:[NSString stringWithFormat:@"%@[inc]", field]];
 }
 
 @end

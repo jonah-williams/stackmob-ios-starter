@@ -296,12 +296,18 @@ static SMEnvironment environment;
 
 - (StackMobRequest *)registerForPushWithUser:(NSString *)userId token:(NSString *)token andCallback:(StackMobCallback)callback
 {
+    return [self registerForPushWithUser:userId token:token overwrite:false andCallback:callback];
+}
+
+- (StackMobRequest *)registerForPushWithUser:(NSString *)userId token:(NSString *)token overwrite:(BOOL)overwrite andCallback:(StackMobCallback)callback
+{
     NSDictionary *tokenDict = [NSDictionary dictionaryWithObjectsAndKeys:token, @"token",
                                @"ios", @"type",
                                nil];
     
     NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:userId, @"userId",
                           tokenDict, @"token",
+                          overwrite, @"overwrite",
                           nil];
     
     StackMobPushRequest *pushRequest = [StackMobPushRequest requestForMethod:@"register_device_token_universal"];
@@ -500,6 +506,15 @@ static SMEnvironment environment;
     
     [self queueRequest:request andCallback:callback];
     
+    return request;
+}
+
+- (StackMobRequest *)put:(NSString *)path withId:(NSString *)objectId updateCounterForField:(NSString *)field by:(int)value andCallback:(StackMobCallback)callback {
+    
+    NSString *fullPath = [NSString stringWithFormat:@"%@/%@", [self escapePath:path], objectId];
+    NSDictionary *arguments = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:value], [NSString stringWithFormat:@"%@[inc]", field], nil];
+    StackMobRequest *request = [StackMobRequest requestForMethod:fullPath withArguments:arguments withHttpVerb:PUT];
+    [self queueRequest:request andCallback:callback];
     return request;
 }
 

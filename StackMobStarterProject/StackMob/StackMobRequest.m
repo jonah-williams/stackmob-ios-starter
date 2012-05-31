@@ -401,7 +401,21 @@
     SMLog(@"RESPONSE CODE %d", statusCode);
     if ([mConnectionData length] > 0) {
         textResult = [[[NSString alloc] initWithData:mConnectionData encoding:NSUTF8StringEncoding] autorelease];
-        SMLog(@"RESPONSE BODY %@", textResult);
+
+        
+#if DEBUG
+        
+        if ([textResult length] > 2000)
+        {
+            SMLog(@"textResult was greater than 2000, truncating for logging purposes");
+            SMLog(@"RESPONSE BODY %@", [textResult substringToIndex:2000]);
+        }
+        else {
+            SMLog(@"RESPONSE BODY %@", textResult);
+        }
+        
+#endif
+         
     }
     
     [session recordServerTimeDiffFromHeader:[[mHttpResponse allHeaderFields] valueForKey:@"Date"]];

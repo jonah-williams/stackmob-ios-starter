@@ -173,7 +173,7 @@ static NSString *const serverTimeDiffKey = @"stackmob.servertimediff";
     pushURL = [[NSString stringWithFormat:@"http://push.%@.%@", _subDomain, _domain] retain];
     secureURL = [[NSString stringWithFormat:@"https://%@", url] retain];
     regularURL = [[NSString stringWithFormat:@"http://%@", url] retain];
-    _serverTimeDiff = [[NSUserDefaults standardUserDefaults] integerForKey:serverTimeDiffKey];
+    _serverTimeDiff = [[NSUserDefaults standardUserDefaults] doubleForKey:serverTimeDiffKey];
     _nextTimeCheck = [[NSDate date] retain];
 }
 
@@ -217,18 +217,22 @@ static NSString *const serverTimeDiffKey = @"stackmob.servertimediff";
 }
 
 - (NSDate *)getServerTime {
+    SMLog(@"Applying a time difference of %f", _serverTimeDiff);
     return [NSDate dateWithTimeIntervalSinceNow:_serverTimeDiff];
 }
 
 -(void)recordServerTimeDiffFromHeader:(NSString*)header {
     if (header != nil) {
+        
         NSDateFormatter *rfcFormatter = [[NSDateFormatter alloc] init];
         [rfcFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
         NSDate *serverTime = [rfcFormatter dateFromString:header];
         _serverTimeDiff = [serverTime timeIntervalSinceDate:[NSDate date]];
+        SMLog(@"Server time is %@ and diff is %f", serverTime, _serverTimeDiff);
         if([[NSDate date] earlierDate:_nextTimeCheck] == _nextTimeCheck) {
             // Save the date to persistent storage every ten minutes
-            [[NSUserDefaults standardUserDefaults] setInteger:_serverTimeDiff forKey:serverTimeDiffKey];
+            [[NSUserDefaults standardUserDefaults] setDouble:_serverTimeDiff forKey:serverTimeDiffKey];
+            SMLog(@"Server time diff after saving to NSUSerDefaults is %f", [[NSUserDefaults standardUserDefaults] doubleForKey:serverTimeDiffKey]);
             NSDate *newDate = [[NSDate dateWithTimeIntervalSinceNow:10 * 60] retain];
             [_nextTimeCheck release];
             _nextTimeCheck = newDate;
