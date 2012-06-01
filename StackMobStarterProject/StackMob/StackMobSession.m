@@ -227,6 +227,7 @@ static NSString *const serverTimeDiffKey = @"stackmob.servertimediff";
         NSDateFormatter *rfcFormatter = [[NSDateFormatter alloc] init];
         [rfcFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
         NSDate *serverTime = [rfcFormatter dateFromString:header];
+        [rfcFormatter release];
         _serverTimeDiff = [serverTime timeIntervalSinceDate:[NSDate date]];
         SMLog(@"Server time is %@ and diff is %f", serverTime, _serverTimeDiff);
         if([[NSDate date] earlierDate:_nextTimeCheck] == _nextTimeCheck) {
